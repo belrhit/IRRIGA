@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +12,6 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { toast } = useToast();
 
   const services = [
     'Irrigation Agricole',
@@ -48,42 +46,50 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message envoyé !",
-        description: "Nous vous recontacterons dans les plus brefs délais.",
-      });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-    }, 2000);
+    // Prepare WhatsApp message
+    const message = `Demande de Devis:%0A
+Nom: ${formData.name}%0A
+Téléphone: ${formData.phone}%0A
+Email: ${formData.email}%0A
+Service: ${formData.service}%0A
+Message: ${formData.message}`;
+
+    // WhatsApp number in international format (Morocco)
+    const whatsappNumber = "212661175015";
+
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+
+    setIsSubmitting(false);
+    // Optionally clear the form after opening WhatsApp
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: ''
+    });
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: 'Adresse',
-      details: ['GROUPE ATTAKKADDOUM GH2 17', '2EME ETAGE SIDI BERNOUSSI', 'CASABLANCA, MAROC']
+      details: ['N° bureau A62', 'CASABLANCA, MAROC']
     },
     {
       icon: Phone,
       title: 'Téléphone',
-      details: ['+212 5XX XXX XXX', '+212 6XX XXX XXX']
+      details: ['+212 611 175 015']
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['contact@irrigamed.ma', 'info@irrigamed.ma']
+      details: ['irrigamed2020@gmail.com']
     },
     {
       icon: Clock,
@@ -165,11 +171,11 @@ const ContactSection = () => {
                     id="email"
                     name="email"
                     value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                    placeholder="votre.email@exemple.com"
-                  />
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                      placeholder="votre.email@exemple.com"
+                    />
                 </div>
 
                 <div>

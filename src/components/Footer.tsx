@@ -47,16 +47,16 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-background/80 text-sm">
-                  GROUPE ATTAKKADDOUM GH2 17, 2EME ETAGE SIDI BERNOUSSI, CASABLANCA
+                N° bureau A62, CASABLANCA
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-background/80 text-sm">+212 5XX XXX XXX</span>
+                <span className="text-background/80 text-sm">+212 611 175 015</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-background/80 text-sm">contact@irrigamed.ma</span>
+                <span className="text-background/80 text-sm">irrigamed2020@gmail.com</span>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ const Footer = () => {
         <div className="border-t border-background/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-background/60 text-sm">
-              © 2024 IRRIGA MED. Tous droits réservés.
+              © 2025 IRRIGA MED. Tous droits réservés.
             </div>
             
             <div className="flex items-center space-x-6">

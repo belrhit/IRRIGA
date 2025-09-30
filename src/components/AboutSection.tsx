@@ -109,8 +109,8 @@ const AboutSection = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Notre Localisation</h3>
                   <p className="text-muted-foreground">
-                    GROUPE ATTAKKADDOUM GH2 17 2EME ETAGE<br />
-                    SIDI BERNOUSSI, CASABLANCA, MAROC
+                   N° bureau A62<br />
+                   CASABLANCA, MAROC
                   </p>
                 </div>
               </div>
