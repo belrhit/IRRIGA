@@ -37,19 +37,20 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: 'Travaux de Construction Souterraine',
-      category: 'Génie Civil',
-      description: 'Développement d\'un complexe résidentiel moderne avec 120 unités et espaces verts.',
+      
+        title: 'Terrassement, Blindage et Pose de Conduite',
+        category: 'Génie Civil',
+        description: 'Travaux de terrassement avec blindage des parois pour la pose sécurisée d‘une conduite souterraine.',
+      
       image: '/project.png',
       pdfUrl: './Photos Collecteur SUD.pdf',
       stats: { units: '120', surface: '5000 m²', delivery: '2024' }
     },
     {
       id: 3,
-      title: 'Travaux de Construction Souterraine',
+      title: 'Terrassement et Pose de Conduite',
       category: 'Génie Civil',
-      description: 'Importation et distribution d\'équipements agricoles de haute technologie européens.',
-      image: '/project.png',
+      description: 'Excavation et préparation du terrain suivies de l‘installation d‘une conduite pour le transport de fluides.',   image: '/project.png',
       pdfUrl: 'Photos Conduite DN2000.pdf',
       stats: { equipment: '500+', countries: '5', value: '2M€' }
     }
